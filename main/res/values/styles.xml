@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomCalendarView">
+        <item name="android:weekDayTextAppearance">@style/WeekDayTextAppearance</item>
+        <item name="android:dateTextAppearance">@style/DateTextAppearance</item>
+        <item name="android:selectedWeekBackgroundColor">?attr/colorAccent</item>
+        <item name="android:textColorPrimary">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="WeekDayTextAppearance">
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="DateTextAppearance">
+        <item name="android:textColor">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/backcolor</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">?attr/colorPrimaryVariant</item>
+        <item name="colorControlNormal">?attr/colorPrimaryDark</item>
+        <item name="colorControlActivated">?attr/colorPrimaryDark</item>
+        <item name="colorPrimary">?attr/colorPrimaryDark</item>
+        <item name="colorOnSurface">?attr/colorPrimaryDark</item>
+    </style>
+</resources>

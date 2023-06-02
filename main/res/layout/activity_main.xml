@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorBackgroundFloating"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:maxHeight="?attr/actionBarSize"
+        android:padding="4dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/i0"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:contentDescription="@string/todo"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toStartOf="@id/t0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/t0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_weight="6"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/courgette"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="9dp"
+            android:text="@string/appName"
+            android:textAlignment="gravity"
+            android:textColor="?attr/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#00000000"
+            android:contentDescription="@string/todo"
+            android:foreground="@drawable/press"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/t0"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/border">
+
+            <ViewFlipper
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inAnimation="@anim/slide_in"
+                android:outAnimation="@anim/slide_out"
+                tools:ignore="UselessLeaf">
+
+                <include layout="@layout/aktualnosci" />
+                <include layout="@layout/odkryj" />
+                <include layout="@layout/atrakcje" />
+                <include layout="@layout/kalendarz" />
+                <include layout="@layout/pytanie" />
+                <include layout="@layout/mieszk" />
+
+            </ViewFlipper>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="?attr/colorBackgroundFloating"
+                android:orientation="vertical"
+                tools:ignore="VisualLintBounds">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="32dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/aktualnosci"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="@drawable/press">
+
+                        <ImageView
+                            android:id="@+id/i1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:scaleX="0.6"
+                            android:scaleY="0.6"
+                            android:src="@drawable/megaphone"
+                            android:tintMode="src_in"
+                            app:layout_constraintEnd_toStartOf="@id/t1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="?attr/colorPrimaryVariant"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/t1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="start|center_vertical"
+                            android:text="Aktualności"
+                            android:textColor="?attr/colorPrimaryVariant"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/border1"
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/odkryj"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="@drawable/press">
+
+                        <ImageView
+                            android:id="@+id/i2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:scaleX="0.6"
+                            android:scaleY="0.6"
+                            android:src="@drawable/location"
+                            android:tintMode="src_in"
+                            app:layout_constraintEnd_toStartOf="@id/t2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="?attr/colorPrimaryDark"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/t2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="start|center_vertical"
+                            android:text="Odkryj Jastarnię"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/border4"
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/divider" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/atrakcje"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="@drawable/press">
+
+                        <ImageView
+                            android:id="@+id/i3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:scaleX="0.6"
+                            android:scaleY="0.6"
+                            android:src="@drawable/theater"
+                            android:tintMode="src_in"
+                            app:layout_constraintEnd_toStartOf="@id/t3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="?attr/colorPrimaryDark"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/t3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="start|center_vertical"
+                            android:text="Polecane Atrakcje"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/border2"
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/kalendarz"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="@drawable/press">
+
+                        <ImageView
+                            android:id="@+id/i4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5"
+                            android:src="@drawable/calendar"
+                            android:tintMode="src_in"
+                            app:layout_constraintEnd_toStartOf="@id/t4"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="?attr/colorPrimaryDark"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/t4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="start|center_vertical"
+                            android:text="Kalendarz Imprez"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/border3"
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/pytanie"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="@drawable/press">
+
+                        <ImageView
+                            android:id="@+id/i5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:scaleX="0.55"
+                            android:scaleY="0.55"
+                            android:src="@drawable/communication"
+                            android:tintMode="src_in"
+                            app:layout_constraintEnd_toStartOf="@id/t5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="?attr/colorPrimaryDark"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/t5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="start|center_vertical"
+                            android:text="Zadaj Pytanie"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mieszk"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:clickable="true"
+                        android:foreground="@drawable/press"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/i6"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="#00000000"
+                            android:contentDescription="@string/todo"
+                            android:scaleType="centerInside"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            android:tintMode="src_in"
+                            app:layout_constraintBottom_toTopOf="@id/t6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/man"
+                            app:tint="?attr/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/t6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="bottom|center_horizontal"
+                            android:text="Dla Mieszkańców"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="HardcodedText" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.navigation.NavigationView>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+        <View
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

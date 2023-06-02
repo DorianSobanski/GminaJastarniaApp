@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.JastarniaApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/light_grey</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="colorBackgroundFloating">@color/white</item>
+        <item name="colorPrimaryVariant">@color/blueb</item>
+        <item name="colorSurface">#2e8dc5</item>
+        <item name="colorSurfaceVariant">#cc2e8dc5</item>
+        <item name="colorSurfaceInverse">#552e8dc5</item>
+        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/blueb</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

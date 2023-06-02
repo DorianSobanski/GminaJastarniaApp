@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="@drawable/press"
+        android:paddingVertical="16dp"
+        android:text="Na którym wejściu jest plaża dla psów?"
+        android:textColor="?attr/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:paddingBottom="16dp"
+        android:text="Na wejściach o numerach 31 (w Kuźnicy) i 55 (między Jastarnią, a Juratą)"
+        android:textColor="?attr/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:ignore="HardcodedText"
+        tools:visibility="gone" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="20dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/divider"
+        android:scaleX="20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintBounds" />
+</androidx.constraintlayout.widget.ConstraintLayout>
